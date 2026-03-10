@@ -63,7 +63,7 @@ mentorship-backend
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/mentorship-backend.git
+git clone https://github.com/YOUR_USERNAME/mentorship.git
 2️⃣ Navigate to project
 cd mentorship-backend
 3️⃣ Install dependencies
