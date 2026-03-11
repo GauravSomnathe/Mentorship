@@ -1,11 +1,21 @@
 const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
- name:String,
- age:Number,
+ name:{
+  type:String,
+  required:true,
+  minlength:2
+ },
+ age:{
+  type:Number,
+  required:true,
+  min:5,
+  max:25
+ },
  parentId:{
   type:mongoose.Schema.Types.ObjectId,
-  ref:"User"
+  ref:"User",
+  required:true
  }
 },{
  timestamps:true

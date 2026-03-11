@@ -40,6 +40,9 @@ exports.summarize = async(req,res)=>{
 
  }catch(error){
   console.error("LLM request error:", error);
+  if (error.status === 429) {
+   return res.status(429).json({message: "Rate limit exceeded. Please try again later."});
+  }
   const msg = error?.message || "LLM service failed";
   res.status(502).json({message: msg});
  }

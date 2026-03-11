@@ -1,11 +1,20 @@
 const mongoose = require("mongoose");
 
 const lessonSchema = new mongoose.Schema({
- title:String,
- description:String,
+ title:{
+  type:String,
+  required:true,
+  minlength:3
+ },
+ description:{
+  type:String,
+  required:true,
+  minlength:10
+ },
  mentorId:{
   type:mongoose.Schema.Types.ObjectId,
-  ref:"User"
+  ref:"User",
+  required:true
  }
 },{
  timestamps:true

@@ -3,11 +3,23 @@ const mongoose = require("mongoose");
 const sessionSchema = new mongoose.Schema({
  lessonId:{
   type:mongoose.Schema.Types.ObjectId,
-  ref:"Lesson"
+  ref:"Lesson",
+  required:true
  },
- date:Date,
- topic:String,
- summary:String
+ date:{
+  type:Date,
+  required:true
+ },
+ topic:{
+  type:String,
+  required:true,
+  minlength:3
+ },
+ summary:{
+  type:String,
+  required:true,
+  minlength:10
+ }
 },{
  timestamps:true
 });
